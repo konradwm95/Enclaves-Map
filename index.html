@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enclaves Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="territories.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="list_by_country"></div>
+    <nav>
+      <div class="container">
+        <div class="dropdown dropdown_search">
+          <button class="drop_btn">
+            <img src="./assets/magnifier.png" alt="" width="20px" />
+          </button>
+          <div class="dropdown-content">
+            <form class="search_territories" action="">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="e.g. San Marino"
+              />
+              <button>Search!</button>
+            </form>
+          </div>
+        </div>
+        <div class="dropdowns_container">
+          <div class="dropdown">
+            <button class="drop_btn">Filters</button>
+            <div class="dropdown-content dropdown_filters">
+              <form class="filter_territories" action="">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="enclave_also_exclave"
+                    value="enclave_also_exclave"
+                    class="filter_input"
+                    checked
+                  />
+                  Enclave (also Exclaves)
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="sovereign_enclave"
+                    value="sovereign_enclave"
+                    class="filter_input"
+                    checked
+                  />
+                  Souvereign Enclaves
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="exclave_no_enclave"
+                    value="exclave_no_enclave"
+                    class="filter_input"
+                    checked
+                  />
+                  Exclaves
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="sovereign_semi_enclave"
+                    value="sovereign_semi_enclave"
+                    class="filter_input"
+                    checked
+                  />
+                  Sovereign Semi-enclaves
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="non_sovereign_semi_enclave"
+                    value="non_sovereign_semi_enclave"
+                    class="filter_input"
+                    checked
+                  />
+                  Non-Sovereign Semi-enclaves
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="non_sovereign_semi_exclave"
+                    value="non_sovereign_semi_exclave"
+                    class="filter_input"
+                    checked
+                  />
+                  Non-Sovereign Semi-exclaves
+                </label>
+              </form>
+              <form class="high_seas_toggle" action="">
+                <label style="color: rgb(32, 95, 204)">
+                  <input
+                    type="checkbox"
+                    name="high_seas"
+                    value="high_seas"
+                    class="high_seas_input"
+                  />
+                  <strong>High Seas Territories</strong>
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="drop_btn">Stats</button>
+            <div class="dropdown-content dropdown_statistics"></div>
+          </div>
+        </div>
+      </div>
+      <div class="main_banner">
+        <h1>The Enclav Map</h1>
+        <div class="logo">
+          <img src="./assets/logo.png" alt="logo" width="120px"/>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div id="map"></div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

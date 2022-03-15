@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: black;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  padding: 0 40px;
+  font-size: 1.8rem;
+}
+
+nav .container > * {
+  margin: 0 0 15px 0;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 1px 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+nav button {
+  color: black;
+  background-color: white;
+  padding: 5px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdowns_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min-content;
+}
+
+.dropdowns_container > * {
+  margin-right: 20px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  width: max-content;
+  display: none;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.filter_territories label,
+.high_seas_toggle,
+.dropdown_statistics {
+  padding: 4px 10px;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.filter_territories label,
+.high_seas_toggle {
+  display: block;
+}
+
+.dropdown_search .dropdown-content {
+  position: absolute;
+  top: 0;
+  display: block;
+}
+
+input[type="checkbox"] {
+  margin-right: 2px;
+}
+
+/* do zmiany */
+nav .main_banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main_banner h1 {
+  margin-right: 20px;
+}
+
+.logo {
+  background-color: white;
+  border-radius: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.logo > img {
+  width: 100%;
+}
+
+#map {
+  height: calc(100vh - 150px);
+  z-index: 10;
+}
+
+.list_by_country {
+  position: fixed;
+  width: 40vw;
+  max-height: 60vh;
+  top: 200px;
+  right: 0;
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px 0 0;
+  z-index: 100;
+  display: none;
+  overflow: scroll;
+  transition: 0.3s;
+}
+
+.list_by_country button {
+  font-size: 2em;
+  padding: 0 5px;
+  background-color: midnightblue;
+  color: white;
+  border-radius: 10px;
+  transition: 0.1s;
+}
+
+.list_by_country button:hover {
+  transform: translate(5%) scale(1.2);
+}
+
+.list_by_country button.delete {
+  position: fixed;
+  top: 220px;
+  right: 20px;
+  font-size: 40px;
+  color: black;
+  background-color: orange;
+  transition: 0.3s;
+}
+
+.list_by_country button.hide {
+  position: fixed;
+  top: 200px;
+  right: calc(40vw - 10px);
+  width: 50px;
+  font-size: 50px;
+  color: black;
+  background-color: burlywood;
+  transition: 0.3s;
+}
+
+.hidden {
+  right: calc(-40vw);
+}
+
+.list_by_country button.hidden {
+  transform: translateX(40vw);
+}
+
+@media only screen and (max-width: 1023px) {
+  .main_banner h1 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .search_territories button,
+  .dropdown_search .dropdown-content {
+    display: none;
+  }
+  nav .container > * {
+    margin: 0 20px 0 0;
+  }
+
+  .dropdown_search:hover > button {
+    transform: scale(0.5);
+  }
+
+  .dropdown_search:hover input[type="text"] {
+    width: 60%;
+  }
+
+  .dropdown_search:hover ~ .dropdowns_container {
+    display: none;
+  }
+
+  .dropdown-content {
+    position: fixed;
+    left: 0;
+    top: 150px;
+    width: 100vw;
+  }
+  .list_by_country {
+    width: 80vw;
+  }
+  .hidden {
+    right: calc(-80vw);
+  }
+  .list_by_country button.hide {
+    right: calc(80vw - 5px);
+  }
+  .list_by_country button.hidden {
+    transform: translateX(80vw);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  nav {
+    padding: 0 20px;
+  }
+  .main_banner .logo {
+    width: 60px;
+    height: 60px;
+  }
+  nav {
+    height: 100px;
+  }
+  #map {
+    height: calc(100vh - 100px);
+  }
+  .dropdown-content {
+    top: 100px;
+  }
+  .list_by_country {
+    top: 150px;
+    padding: 30px;
+    font-size: 0.8rem;
+    border-radius: 10px 0 0 10px;
+  }
+  .list_by_country button.delete {
+    font-size: 30px;
+    top: 170px;
+    right: 30px;
+  }
+  .list_by_country button.hide {
+    top: 150px;
+    width: 40px;
+    font-size: 40px;
+  }
+}
