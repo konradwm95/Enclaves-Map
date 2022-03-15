@@ -47,7 +47,7 @@ function start() {
 }
 start()
 
-// dodawanie terytoriów do mapy
+// Adding territories to the map
 function addTerritoriesToMap(territories) {
   territories.forEach(territorium => {
     const colorIndex = territoriesTypes.indexOf(territorium.type)
@@ -61,7 +61,7 @@ function addTerritoriesToMap(territories) {
   })
 }
 
-// usuwanie terytoriów z mapy
+// Removing territories from the map
 function removeTerritoriesFromMap(markers) {
   markers.forEach(marker => {
     map.removeLayer(marker)
@@ -69,8 +69,7 @@ function removeTerritoriesFromMap(markers) {
   markers = []
 }
 
-// CZYSTA FUNKCJA
-// Tworzenie opisów krajów do popupów
+// Creating a popup's description
 function createDescription(territorium) {
   let enclavedWithinSpan
   if (!territorium.enclavedWithin) enclavedWithinSpan = ""
@@ -115,8 +114,7 @@ function createDescription(territorium) {
   return `<h1>${territorium.name}</h1><h2>Area (km<sup>2</sup>): ${territorium.area}</h2><h2>${coordinates}</h2></br><h2>Type: ${type}</h2></br><h2>${exclaveOfSpan}${enclavedWithinSpan}</h2></br><h2>${notesSpan}</h2>`
 }
 
-// CZYSTA FUNKCJA
-// Konwersja koordynatów na format do wyświetlenia userowi
+// Conversion of coordinates to user friendly format
 function processCoords(rawCoordinates) {
   let latitude = rawCoordinates[0]
   let longitude = rawCoordinates[1]
@@ -128,36 +126,35 @@ function processCoords(rawCoordinates) {
   return `${latitude}, ${longitude}`
 }
 
-// Filtrowanie terytoriów ze względu na rodzaj
+// Filtering territories by kind
 function filterTerritories() {
   removeTerritoriesFromMap(mapMarkers)
+
+  if (!highSeas) {
+    currentTerritories = territoriesData.filter(territorium => {
+      return territorium.name.toLocaleLowerCase() != "high seas"
+    })
+  } else currentTerritories = territoriesData;
 
   const choosenFilters = []
   filterInputs.forEach(input => {
     if (input.checked) choosenFilters.push(input.value)
   })
-  currentTerritories = territoriesData.filter(territorium => {
+  currentTerritories = currentTerritories.filter(territorium => {
     return choosenFilters.includes(territorium.type)
   })
-
-  if (!highSeas) {
-    currentTerritories = currentTerritories.filter(territorium => {
-      return territorium.name.toLocaleLowerCase() != "high seas"
-    })
-  }
 
   updateStatistics(currentTerritories)
 
   addTerritoriesToMap(currentTerritories)
 }
 
-function toggleHighSeas(highSeas) {
+function toggleHighSeas() {
   highSeas = !highSeas
-  console.log(highSeas)
   filterTerritories()
 }
 
-// Tworzenie listy terytoriów powiązanych z wyszukiwanym krajem
+// Creating a list of territories related to searched country
 function createListOfRelated(territorium_name) {
   const relatedList = []
   territoriesData.forEach(territorium => {
@@ -217,12 +214,13 @@ function createListOfRelated(territorium_name) {
   return fragment
 }
 
-// zamykanie listy powiąznych terytoriów
+// Closing list of related territories
 function closeListOfRelated() {
   listOfRelatedElem.innerHTML = ""
   listOfRelatedElem.style.display = "none"
 }
 
+// Hiding list of related territories
 function hideListOfRelated() {
   listOfRelatedElem.classList.toggle("hidden")
   listOfRelatedElem.querySelector(".delete").classList.toggle("hidden")
@@ -232,7 +230,7 @@ function hideListOfRelated() {
   else hideButton.innerText = ">"
 }
 
-// tworzenie kolorowych markerów
+// Creating a color icons
 function createColorIcon(color) {
   const icon = new L.Icon({
     iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
@@ -246,12 +244,12 @@ function createColorIcon(color) {
   return icon
 }
 
-// Aktualizacja wyświetlanych statystyk
+// Actualising statistics
 function updateStatistics(territories) {
   statsElem.innerHTML = `Liczba wyświetlonych terytoriów to: <strong>${territories.length}</strong>`
 }
 
-// wyszukiwanie terytorium po nazwie
+// Searching territories by name
 function searchForTerritorium(name) {
   let isTerritorium = false
   territoriesData.forEach(territorium => {
@@ -263,7 +261,7 @@ function searchForTerritorium(name) {
   return isTerritorium
 }
 
-// wyszukiwanie terytoriów powiązanych z danym terytorium
+// Searching territories related to the territorium
 function searchForRelatedTerritories(name) {
   let country_or_territorium
   territoriesData.forEach(territorium => {
@@ -286,7 +284,7 @@ function searchForRelatedTerritories(name) {
   }
 }
 
-// połączenie wyszukiwań wszystkich typów
+// Combination of searches of different types
 function search(event) {
   event.preventDefault()
 
