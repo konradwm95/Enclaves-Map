@@ -256,7 +256,7 @@ function colorFilters(colors, labels) {
 
 // Actualising statistics
 function updateStatistics(territories) {
-  statsElem.innerHTML = `Liczba wyświetlonych terytoriów to: <strong>${territories.length}</strong>`
+  statsElem.innerHTML = `The number of displayed territories is: <strong>${territories.length}</strong>`
 }
 
 // Searching territories by name
