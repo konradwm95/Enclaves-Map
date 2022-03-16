@@ -154,7 +154,7 @@ function toggleHighSeas() {
   filterTerritories()
 }
 
-// Creating a list of territories related to searched country
+// Creating a list of territories related to searched territorium
 function createListOfRelated(territorium_name) {
   const relatedList = []
   territoriesData.forEach(territorium => {

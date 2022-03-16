@@ -206,16 +206,6 @@ nav .main_banner {
   margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 500px) {
-  .credits-dropdown {
-    bottom: 30px;
-    border-radius: 0 10px 10px 0;
-  }
-  .credits-dropdown-content {
-    width: 80%;
-  }
-}
-
 .credits-dropdown:hover .credits-dropdown-content {
   display: block;
 }
@@ -304,5 +294,12 @@ nav .main_banner {
     top: 150px;
     width: 40px;
     font-size: 40px;
+  }
+  .credits-dropdown {
+    bottom: 30px;
+    border-radius: 0 10px 10px 0;
+  }
+  .credits-dropdown-content {
+    width: 80%;
   }
 }
