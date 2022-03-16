@@ -102,7 +102,7 @@ nav .main_banner {
 
 .logo {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 80px;
   height: 80px;
 }
@@ -173,6 +173,51 @@ nav .main_banner {
 
 .list_by_country button.hidden {
   transform: translateX(40vw);
+}
+
+.credits-dropdown {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 24px;
+  padding: 5px;
+  background-color: black;
+  border-radius: 0 5px 0 0;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.credits-dropdown a {
+  color: lightblue;
+}
+
+.credits-dropdown-content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: max-content;
+  padding: 10px;
+  background-color: black;
+  border-radius: 0 10px 0 0;
+  display: none;
+}
+
+.credits-dropdown-content div:first-child {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .credits-dropdown {
+    bottom: 30px;
+    border-radius: 0 10px 10px 0;
+  }
+  .credits-dropdown-content {
+    width: 80%;
+  }
+}
+
+.credits-dropdown:hover .credits-dropdown-content {
+  display: block;
 }
 
 @media only screen and (max-width: 1023px) {
