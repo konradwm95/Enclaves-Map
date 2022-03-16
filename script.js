@@ -6,6 +6,8 @@ const filterInputs = [...document.querySelectorAll(".filter_input")]
 const highSeasForm = document.querySelector(".high_seas_toggle")
 const highSeasInput = document.querySelector(".high_seas_input")
 
+const filterLabels = [...document.querySelectorAll(".filter_territories label")];
+
 const statsElem = document.querySelector(".dropdown_statistics")
 
 const listOfRelatedElem = document.querySelector(".list_by_country")
@@ -26,7 +28,7 @@ L.tileLayer(
   }
 ).addTo(map)
 
-const colors = ["blue", "yellow", "green", "orange", "violet", "red"]
+const colors = ["blue", "gold", "green", "orange", "violet", "red"]
 const territoriesTypes = [
   "enclave_also_exclave",
   "sovereign_enclave",
@@ -44,6 +46,7 @@ function start() {
   filterTerritories()
   addTerritoriesToMap(currentTerritories)
   updateStatistics(currentTerritories)
+  colorFilters(colors, filterLabels);
 }
 start()
 
@@ -242,6 +245,13 @@ function createColorIcon(color) {
     shadowSize: [41, 41]
   })
   return icon
+}
+
+// Coloring filter input
+function colorFilters(colors, labels) {
+  labels.forEach((label, index) => {
+    label.style.color = colors[index];
+  })
 }
 
 // Actualising statistics
