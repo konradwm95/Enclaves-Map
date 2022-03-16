@@ -707,7 +707,7 @@ const territoriesData = [
     area: "3.355",
     exclaveOf: "Northern Cyprus",
     enclavedWithin: "Cyprus",
-    coordinates: ["35.18", "32.62"],
+    coordinates: ["35.178", "32.614"],
     notes:
       "The de facto independent Turkish Republic of Northern Cyprus (TRNC), which is unrecognized internationally, has a semi-enclave in the island's Northwest, Kokkina/Erenköy, which is bounded by the U.N. buffer zone and the Mediterranean Sea."
   },
@@ -732,6 +732,56 @@ const territoriesData = [
       "A British Overseas Territory located at the southern tip of the Iberian Peninsula. It's bordered to the north by Spain."
   },
   {
+    name: "Oecusse",
+    type: "non_sovereign_semi_enclave",
+    area: "814",
+    exclaveOf: "East Timor",
+    enclavedWithin: "Indonesia",
+    coordinates: ["-9.3", "124.3"],
+    notes:
+      "Special Administrative Region of East Timor. A coastal exclave in the western part of the island of Timor, Oecusse is separated from the rest of East Timor by West Timor, which is part of the province of Nusa Tenggara Timur, Indonesia, and which surrounds Oecusse in all directions except the north, where it borders the Savu Sea."
+  },
+  {
+    name: "Musandam",
+    type: "non_sovereign_semi_enclave",
+    area: "1800",
+    exclaveOf: "Oman",
+    enclavedWithin: "United Arab Emirates",
+    coordinates: ["26.00", "56.30"],
+    notes:
+      "The Musandam Governorate is a governorate of Oman. With the exception of the exclave of Madha, it is located on the Musandam Peninsula, which juts into the Strait of Hormuz, the narrow entry into the Persian Gulf, from the Arabian Peninsula. The Governorate is also an exclave, separated from the rest of Oman by the United Arab Emirates. Its location gives Oman partial control, shared with Iran, of the strategic strait."
+  },
+  {
+    name: "Ceuta",
+    type: "non_sovereign_semi_enclave",
+    area: "18.5",
+    exclaveOf: "Spain",
+    enclavedWithin: "Morocco",
+    coordinates: ["35.895", "-5.348"],
+    notes:
+      "Ceuta is a Spanish autonomous city on the north coast of Africa. Bordered by Morocco, it lies along the boundary between the Mediterranean Sea and the Atlantic Ocean. It is one of the several Spanish territories in Africa and, along with Melilla and the Canary Islands, one of the only permanently inhabited by a civilian population."
+  },
+  {
+    name: "Melilla",
+    type: "non_sovereign_semi_enclave",
+    area: "12.3",
+    exclaveOf: "Spain",
+    enclavedWithin: "Morocco",
+    coordinates: ["35.289", "-2.949"],
+    notes:
+      "Melilla is one of two autonomous cities of Spain, on the Morocco–Spain border."
+  },
+  {
+    name: "Peñón de Vélez de la Gomera",
+    type: "non_sovereign_semi_enclave",
+    area: "0.019",
+    exclaveOf: "Spain",
+    enclavedWithin: "Morocco",
+    coordinates: ["35.1722", "-4.2992"],
+    notes:
+      "Peñón de Vélez de la Gomera is a Spanish exclave and rocky tied island, in the western Mediterranean Sea, connected to the Moroccan shore by a sandy isthmus. It is also connected to a smaller islet to the east, La Isleta, by a rocky isthmus. The tied island was named Hajar Badis (Rock of Badis) and was connected to the town of Badis. Vélez de la Gomera, along with La Isleta, is a premodern overseas possession known as a plaza de soberanía. It is administered by the Spanish central government and has a population consisting only of a small number of Spanish military personnel."
+  },
+  {
     name: "Kaliningrad Oblast",
     type: "non_sovereign_semi_exclave",
     area: "15,100",
@@ -740,6 +790,26 @@ const territoriesData = [
     coordinates: ["54.71", "20.5"],
     notes:
       "The westernmost federal subject of Russia. It is a semi-exclave, and is situated on the Baltic coast. The oblast is bordered by Poland to the south, Lithuania to the north and east, and the Baltic Sea to the west. It is impossible to travel overland between the oblast and the main contiguous portion of Russia without passing through at least two other countries."
+  },
+  {
+    name: "Rio Muni",
+    type: "non_sovereign_semi_exclave",
+    area: "26,017",
+    exclaveOf: "Equatorial Guinea",
+    enclavedWithin: "",
+    coordinates: ["1.53", "10.66"],
+    notes:
+      "Continental Region surrounded by Gabon, Cameroon and the Atlantic Ocean and can only be accessed from the capital by boat or plane."
+  },
+  {
+    name: "Cabinda",
+    type: "non_sovereign_semi_exclave",
+    area: "7,290",
+    exclaveOf: "Angola",
+    enclavedWithin: "",
+    coordinates: ["-5.56", "12.24"],
+    notes:
+      "Cabinda is separated from the rest of Angola by a narrow strip of territory belonging to the Democratic Republic of the Congo, which bounds the province on the south and the east. Cabinda is bounded on the north by the Republic of the Congo, and on the west by the Atlantic Ocean. Adjacent to the coast are some of the largest offshore oil fields in the world."
   },
   {
     name: "Famagusta District",
